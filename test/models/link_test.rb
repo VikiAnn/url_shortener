@@ -10,4 +10,12 @@ class LinkTest < ActiveSupport::TestCase
     link = Link.new(uri: 123, hashid: '123123')
     refute link.valid?
   end
+
+  test "unique uri & hashid" do
+    link = links(:one)
+    dup = link.dup
+    refute dup.valid?
+    assert dup.errors.include?(:uri)
+    assert dup.errors.include?(:hashid)
+  end
 end

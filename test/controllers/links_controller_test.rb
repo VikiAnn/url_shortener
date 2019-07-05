@@ -12,7 +12,7 @@ class LinksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create link" do
     assert_difference('Link.count') do
-      post links_url, params: { link: { hashid: @link.hashid, uri: @link.uri } }, as: :json
+      post links_url, params: { link: { hashid: "123abc", uri: "http://example.com/myspace" } }, as: :json
     end
 
     assert_response 201
