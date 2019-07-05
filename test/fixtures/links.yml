@@ -2,8 +2,8 @@
 
 one:
   hashid: MyString
-  uri: MyString
+  uri: http://example.com/1
 
 two:
-  hashid: MyString
-  uri: MyString
+  hashid: anotherString
+  uri: http://example.com/2
