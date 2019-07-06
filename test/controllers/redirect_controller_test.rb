@@ -10,4 +10,10 @@ class RedirectControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     assert response.redirect_url == @link.uri
   end
+
+  test "should 404" do
+    assert_raises ActiveRecord::RecordNotFound do
+      get shorter_url_url("asdf")
+    end
+  end
 end
