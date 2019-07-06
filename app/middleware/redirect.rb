@@ -4,8 +4,8 @@ class Redirect
   end
 
   def call(env)
-    length = env["REQUEST_PATH"].length - 1
-    hashid = env["REQUEST_PATH"].slice(1, length)
+    length = env["PATH_INFO"].length - 1
+    hashid = env["PATH_INFO"].slice(1, length)
     return @app.call(env) if hashid.start_with?('api')
 
     link = Rails.cache.fetch(hashid) do
