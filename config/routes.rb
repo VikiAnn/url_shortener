@@ -3,5 +3,5 @@ Rails.application.routes.draw do
     resources :links
   end
 
-  get '/*hashid', to: 'redirect#index', as: :shorter_url
+  get '/*hashid', to: Redirect, as: :shorter_url
 end
